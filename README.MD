@@ -1,7 +1,5 @@
 ## 개요
 
----
-
 이 레파지토리는 도서 [*Spring 6 Recipes*] 에 나온 예제에 대한 환경 구축 및 실행 가이드를 제공합니다.
 
 <img src="images/spring-recipe6.PNG" width="80" height="80">
@@ -12,19 +10,13 @@
 
 ## Release
 
----
-
 Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(https://github.com/Apress/spring-6-recipes)에서 업데이트 된 소스코드를 제공합니다.
 
 ## Contribution
 
----
-
 본 레파지토리의 기여 방법은 Contributing.md 파일을 참고하세요.
 
 ## 사전 준비
-
----
 
 1. Java19 설치
 2. https://gradle.org [Gradle] 설치(또는 프로젝트와 함께 제공된 Gradle Wrapper 사용)
@@ -32,8 +24,6 @@ Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(
 4. (권고)도커 설치.http://docker.com을 사용해 데이터베이스나 샘플 웹 애플리케이션을 실행할 수 있습니다.
 
 ## 환경 구축 가이드
-
----
 
 - <b>IntelliJ</b>  
    https://github.com/LENATeam/spring6-recipe/blob/master/build/intellij-guide.md
