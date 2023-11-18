@@ -10,7 +10,7 @@
 
 ## Release
 
-Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(https://github.com/Apress/spring-6-recipes)에서 업데이트 된 소스코드를 제공합니다.
+Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(https://github.com/Apress/spring-6-recipes) 에서 업데이트 된 소스코드를 제공합니다.
 
 ## Contribution
 
