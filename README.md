@@ -1,4 +1,4 @@
-## 개요
+## 개요   [![Spring Recipe6 build gradle](https://github.com/LENATeam/spring6-recipe/actions/workflows/build-gradle-project.yml/badge.svg?branch=master)](https://github.com/LENATeam/spring6-recipe/actions/workflows/build-gradle-project.yml)
 
 이 레파지토리는 도서 [*Spring 6 Recipes*] 에 나온 예제에 대한 환경 구축 및 실행 가이드를 제공합니다.
 
