@@ -14,7 +14,7 @@ Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(
 
 ## Contribution
 
-본 레파지토리의 기여 방법은 (https://github.com/LENATeam/spring6-recipe/blob/master/Contributing.md) 파일을 참고하세요.
+본 레파지토리의 기여 방법은 [Contributing.md](Contributing.md)를 참고하세요.
 
 ## 사전 준비
 
