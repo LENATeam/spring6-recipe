@@ -1,4 +1,4 @@
-## 개요
+## 개요   [![Spring Recipe6 build gradle](https://github.com/LENATeam/spring6-recipe/actions/workflows/build-gradle-project.yml/badge.svg?branch=master)](https://github.com/LENATeam/spring6-recipe/actions/workflows/build-gradle-project.yml)
 
 이 레파지토리는 도서 [*Spring 6 Recipes*] 에 나온 예제에 대한 환경 구축 및 실행 가이드를 제공합니다.
 
@@ -10,11 +10,11 @@
 
 ## Release
 
-Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(https://github.com/Apress/spring-6-recipes)에서 업데이트 된 소스코드를 제공합니다.
+Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(https://github.com/Apress/spring-6-recipes) 에서 업데이트 된 소스코드를 제공합니다.
 
 ## Contribution
 
-본 레파지토리의 기여 방법은 Contributing.md 파일을 참고하세요.
+본 레파지토리의 기여 방법은 [Contributing.md](Contributing.md)를 참고하세요.
 
 ## 사전 준비
 
@@ -25,11 +25,9 @@ Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(
 
 ## 환경 구축 가이드
 
-- <b>IntelliJ</b>  
-   https://github.com/LENATeam/spring6-recipe/blob/master/build/intellij-guide.md
-- <b>Eclipse</b>
-
-- <b>STS</b>
+- <b>[IntelliJ](build/intellij-guide.md)</b>  
+- <b>[Eclipse]()</b>
+- <b>[STS]()</b>
 
 ## 빌드 방법
 
