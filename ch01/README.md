@@ -33,6 +33,18 @@
 | recipe_1_6_i    | 프로퍼티를 사용해 POJO 초깃값 설정하는 예제                                                                    | 책에는 없는 변수 제거해 책의 내용과 동일하게 통일함                      |
 | recipe_1_6_ii   | POJO에서 외부 리소스(message.properties)를 사용하는 예제                                                       | 책에는 없는 변수 제거해 책의 내용과 동일하게 통일함                      |
 | recipe_1_7      | 국제화를 지원하는 애플리케이션 예제                                                                            | 책에 Cashier 클래스 설명이 있는데 동일한 소스가 깃허브에는 없어서 추가함 |
+| recipe_1_8_i  | @Bean에 initMethod와 destroyMethod 애트리뷰트를 사용해 POJO의 초기화와 종료 작업을 정의한 예제    |   |
+| recipe_1_8_ii     | @PostConstruct와 @PreDestroy를 사용해 POJO의 초기화와 종료 작업을 정의한 예제     |   | 
+|   recipe_1_8_iii  |   @Lazy로 POJO의 초기화를 지연한 예제 |   |   
+|recipe_1_8_iv|@DependsOn으로 POJO의 초기화 우선순위를 정의한 예제|ShopConfiguration.java 파일에 detePrefixGenerator 빈 선언 코드 추가, Main.java 파일에 getBean의 이름 수정(sequence->sequenceGenerator))|
+|recipe_1_8_v|POJO의 초기화 및 종료 작업이 정의되지 않은 쇼핑몰 애플리케이션|책에 언급이 없는 코드인데 1_8_i ~ 1_8_iii 의 연습용으로 있나 추측되어서 일단 빼진 않았습니다.|
+|recipe_1_9_i|postProcessBeforeInitialization(), postProcessAfterInitialization() 메서드로 빈 후처리기 생성 예제 | ShopConfiguration.java 파일 31줄 @Bean(initMethod = "openFile", destroyMethod = "closeFile") 내용 추가 |
+|recipe_1_9_ii|특정 빈 인스턴스에서만 동작하는 빈 후처리기 생성 예제|ShopConfiguration.java 파일 15줄 @ComponentScan("com.apress.spring6recipes.shop"), 43줄 @Bean(initMethod = "openFile", destroyMethod = "closeFile") 추가 |
+|recipe_1_9_iii||책에 언급이 없는 코드여서 뺏습니다.|
+|recipe_1_9_iv||책에 언급이 없는 코드여서 뺏습니다.|
+|recipe_1_10_i|정적 팩토리 메서드를 호출해 POJO 생성 예제||
+|recipe_1_10_ii|인스턴스 팩토리 메서드를 호출해 POJO 생성 예제||
+|recipe_1_10_iii|스프링 팩토리 빈을 사용해 POJO 생성 예제||
 | recipe_1_11    | @Profile로 자바 구성 클래스를 프로파일별로 작성하는 예제                                                          | N/A                                                                      |
 | recipe_1_12    | POJO에 스프링 IoC 컨테이너 리소스를 알려주는 예제                                                          | N/A                                                                      |
 | recipe_1_16_i   | @Pointcut 애너테이션을 사용해 여러 어드바이스에서 재사용하는 예제                                              | N/A                                                                      |
