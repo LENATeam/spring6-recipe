@@ -3,11 +3,11 @@
 ## 소스 받기
 
 ![img](.//images/spring-recipe-github.PNG)  
-https://github.com/Apress/spring-6-recipes  
-위 spring-6-recipe github 사이트로 이동하고 [https://github.com/Apress/spring-6-recipes.git] 이 주소를 활용해 소스를 받는다.
+https://github.com/LENATeam/spring6-recipe  
+위 spring6-recipe github 사이트로 이동하고 [https://github.com/LENATeam/spring6-recipe.git] 이 주소를 활용해 소스를 받는다.
 
 ```
-git clone https://github.com/Apress/spring-6-recipes.git
+git clone https://github.com/LENATeam/spring6-recipe.git
 ```
 
 ## 기본 환경설정
