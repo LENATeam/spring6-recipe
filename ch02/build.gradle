@@ -48,38 +48,38 @@ subprojects { subproject ->
         }
     }
 }
-//
-//project('recipe_2_9_iv') {
-//
-//    dependencies {
-//        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
-//    }
-//}
-//
-//project('recipe_2_10') {
-//
-//    dependencies {
-//        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
-//        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
-//    }
-//}
-//
-//project('recipe_2_11') {
-//
-//    dependencies {
-//        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
-//        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
-//        implementation group: 'com.github.librepdf', name: 'openpdf'
-//        implementation group: 'org.apache.poi', name: 'poi-ooxml'
-//    }
-//}
-//
-//project('recipe_2_12') {
-//
-//    dependencies {
-//        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
-//        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
-//        implementation group: 'com.github.librepdf', name: 'openpdf'
-//        implementation group: 'org.apache.poi', name: 'poi-ooxml'
-//    }
-//}
+
+project('recipe_2_9_iv') {
+
+    dependencies {
+        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
+    }
+}
+
+project('recipe_2_10') {
+
+    dependencies {
+        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
+        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
+    }
+}
+
+project('recipe_2_11') {
+
+    dependencies {
+        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
+        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
+        implementation group: 'com.github.librepdf', name: 'openpdf'
+        implementation group: 'org.apache.poi', name: 'poi-ooxml'
+    }
+}
+
+project('recipe_2_12') {
+
+    dependencies {
+        implementation group: 'jakarta.validation', name: 'jakarta.validation-api'
+        runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator'
+        implementation group: 'com.github.librepdf', name: 'openpdf'
+        implementation group: 'org.apache.poi', name: 'poi-ooxml'
+    }
+}

@@ -59,9 +59,9 @@
 | recipe_1_20_ii  | AspectJ 애스펙트를 로드타임에 위빙하는 예제(스프링 로드 타임 위버 사용)                                        | N/A                                                                      |
 | recipe_1_20_iii | AspectJ 애스펙트를 로드타임에 위빙하는 예제(스프링 로드 타임 위버 사용, 로드타임 위빙 활성화 초기화 기능 활용) | N/A                                                                      |
 | recipe_1_21     | 스프링에서 애스펙트 구성하는 예제                                                                              | N/A                                                                      |
-| recipe_1_22     | AOP로 POJO를 도메인 객체로 주입하는 예제                                                                       | 실행 오류 수정중                                                         |
-| recipe_1_23_i   | TaskExecutor를 활용한 동시성 구현 예제                                                                         | 실행 오류 수정중                                                         |
-| recipe_1_23_ii  | TaskExecutor를 활용한 동시성 구현 예제                                                                         | 실행 오류 수정중                                                         |
+| recipe_1_22     | AOP로 POJO를 도메인 객체로 주입하는 예제                                                                       | 실행 오류 수정중(LTW로 수행 시 Complex클래스에서 NullPointerException발생                                                         |
+| recipe_1_23_i   | TaskExecutor를 활용한 동시성 구현 예제                                                                         | 실행 오류 수정중(자바 버전 오류)                                                         |
+| recipe_1_23_ii  | TaskExecutor를 활용한 동시성 구현 예제                                                                         | N/A                                                         |
 | recipe_1_24_i   | ApplicationEvent를 활용한 이벤트 사용 예제                                                                     | N/A                                                                      |
 | recipe_1_24_ii  | ApplicationEvent를 활용하지 않는 이벤트 사용 예제                                                              | N/A                                                                      |
 | recipe_1_25_i   | 함수형으로 등록된 빈 수정하기 #1                                                                               | N/A                                                                      |
