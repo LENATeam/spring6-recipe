@@ -1,8 +1,7 @@
 package com.apress.spring6recipes.court.web.config;
 
 import com.apress.spring6recipes.court.web.ExtensionInterceptor;
-import com.apress.spring6recipes.court.web.BasicPerformanceInterceptor;
-
+import com.apress.spring6recipes.court.web.MeasurementInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan("com.apress.springrecipes.court")
 public class InterceptorConfiguration implements WebMvcConfigurer {
 
 	@Override
@@ -21,8 +19,8 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
 	}
 
 	@Bean
-	public BasicPerformanceInterceptor measurementInterceptor() {
-		return new BasicPerformanceInterceptor();
+	public MeasurementInterceptor measurementInterceptor() {
+		return new MeasurementInterceptor();
 	}
 
 	@Bean
