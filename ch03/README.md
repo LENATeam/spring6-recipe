@@ -1,6 +1,30 @@
 | 프로젝트        | 설명                                                                                                           | 비고                                                                     |
 | --------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| recipe_3_1_i    | MarshallingView로 XML 발행 예제                                                               | 실행방법<br>  ./gradlew ch03:recipe_3_1_i:build<br>./gradlew ch03:recipe_3_1_i:docker<br>./gradlew ch03:recipe_3_1_i:dockerRun<br>curl http://127.0.0.1/court/members                        |
-| recipe_3_1_ii | 	@ResponseBody를 이용해 XML 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_ii:build<br>./gradlew ch03:recipe_3_1_ii:docker<br>./gradlew ch03:recipe_3_1_ii:dockerRun<br>curl http://127.0.0.1/court/members |
-| recipe_3_1_ii | @RestController를 이용해 XML 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_iii:build<br>./gradlew ch03:recipe_3_1_iii:docker<br>./gradlew ch03:recipe_3_1_iii:dockerRun<br>curl http://127.0.0.1/court/members |
-| recipe_3_1_iv | @PathVariable 이용 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_iv:build<br>./gradlew ch03:recipe_3_1_iv:docker<br>./gradlew ch03:recipe_3_1_iv:dockerRun<br>curl http://127.0.0.1/court/members/2 |
+| recipe_3_1_i    | MarshallingView로 XML 발행 예제                                                               | 실행방법<br>  ./gradlew ch03:recipe_3_1_i:build<br>./gradlew ch03:recipe_3_1_i:docker<br>./gradlew ch03:recipe_3_1_i:dockerRun<br>curl http://127.0.0.1:8080/court/members                        |
+| recipe_3_1_ii | 	@ResponseBody를 이용해 XML 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_ii:build<br>./gradlew ch03:recipe_3_1_ii:docker<br>./gradlew ch03:recipe_3_1_ii:dockerRun<br>curl http://127.0.0.1:8080/court/members |
+| recipe_3_1_ii | @RestController를 이용해 XML 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_iii:build<br>./gradlew ch03:recipe_3_1_iii:docker<br>./gradlew ch03:recipe_3_1_iii:dockerRun<br>curl http://127.0.0.1:8080/court/members |
+| recipe_3_1_iv | @PathVariable 이용 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_iv:build<br>./gradlew ch03:recipe_3_1_iv:docker<br>./gradlew ch03:recipe_3_1_iv:dockerRun<br>curl http://127.0.0.1:8080/court/members/2 |
+| recipe_3_1_v | ResponseEntity 사용 예제 | 404 에러 발생 |
+| recipe_3_1_vi | ResponseEntity.of 사용 예제 | 404 에러 발생 |
+| recipe_3_2_i | MappingJackson2JsonView를 이용해 JSON 발행 예제| reactive/cour/web/CourtRestApplicationInitializer에서 dispatcher 에러 발생하여 reactive 코드 제거 <br> 실행방법<br>  ./gradlew ch03:recipe_3_2_i:build<br>./gradlew ch03:recipe_3_2_i:docker<br>./gradlew ch03:recipe_3_2_i:dockerRun<br>curl http://127.0.0.1:8080/court/members |
+| recipe_3_2_ii | XML과 JOSN 두 가지를 모두 발행하는 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_2_ii:build<br>./gradlew ch03:recipe_3_2_ii:docker<br>./gradlew ch03:recipe_3_2_ii:dockerRun<br>curl http://127.0.0.1:8080/court/members --header "Accept: application/XML" <br>  curl http://127.0.0.1:8080/court/members --header "Accept: application/JSON" |
+| recipe_3_2_iii | @ResponseBody로 JSON 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_2_iii:build<br>./gradlew ch03:recipe_3_2_iii:docker<br>./gradlew ch03:recipe_3_2_iii:dockerRun<br>curl http://127.0.0.1:8080/court/members --header "Accept: application/XML" <br>  curl http://127.0.0.1:8080/court/members --header "Accept: application/JSON"|
+| recipe_3_2_iv | | 책에 설명이 없는 코드라 제외 |
+| recipe_3_2_v | | 책에 설명이 없는 코드라 제외 |
+| recipe_3_3_i | @RequestBody로 요청을 받아 처리하는 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_3_i:build<br>./gradlew ch03:recipe_3_3_i:docker<br>./gradlew ch03:recipe_3_3_i:dockerRun<br>curl http://127.0.0.1:8080/court/members <br> curl -d '{  "name" : "Nick Fury",  "phone" : "secret",  "email" : "nick.fury@shield.org"}' -H "Content-Type: application/json"  -X POST http://127.0.0.1:8080/court/members <br> curl http://127.0.0.1:8080/court/members <br> curl http://127.0.0.1:8080/court/members/4 |
+| recipe_3_3_ii | @Valid를 이용해 요청 검증 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_3_ii:build<br>./gradlew ch03:recipe_3_3_ii:docker<br>./gradlew ch03:recipe_3_3_ii:dockerRun<br>curl http://127.0.0.1:8080/court/members <br> curl -d '{  "name" : "",  "phone" : "secret",  "email" : "nick.fury.shield.org"}' -H "Content-Type: application/json"  -X POST http://127.0.0.1:8080/court/members |
+| recipe_3_3_iii | 스프링 MVC로 에러 처리 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_3_iii:build<br>./gradlew ch03:recipe_3_3_iii:docker<br>./gradlew ch03:recipe_3_3_iii:dockerRun<br>curl http://127.0.0.1:8080/court/members <br> curl -d '{  "name" : "",  "phone" : "secret",  "email" : "nick.fury.shield.org"}' -H "Content-Type: application/json"  -X POST http://127.0.0.1:8080/court/members |
+| recipe_3_3_iv | RFC-7807로 스프링 MVC 에러 처리 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_3_iv:build<br>./gradlew ch03:recipe_3_3_iv:docker<br>./gradlew ch03:recipe_3_3_iv:dockerRun<br>curl http://127.0.0.1:8080/court/members <br> curl -d '{  "name" : "",  "phone" : "secret",  "email" : "nick.fury.shield.org"}' -H "Content-Type: application/json"  -X POST http://127.0.0.1:8080/court/members |
+| recipe_3_4_i | REST 서비스 호출 예제 | 앞의 예제의 docker 컨테이너를 띄워놓은 상태에서 실행 |
+| recipe_3_4_ii| 매개변수화한 URL에서 데이터 가져오기 예제 | |
+| recipe_3_4_iii | 매핑된 객체로 데이터 가져오기 예제 | |
+| recipe_3_5_i | RSS/아톰 피드 발행 예제| 실행방법<br>  ./gradlew ch03:recipe_3_5_i:build<br>./gradlew ch03:recipe_3_5_i:docker<br>./gradlew ch03:recipe_3_5_i:dockerRun<br>curl http://127.0.0.1:8080/court/atomfeed <br> curl http://127.0.0.1:8080/court/rssfeed <br> curl http://127.0.0.1:8080/court/jsontournament |
+| recipe_3_6_i | ResponseBodyEmitter를 이용해 결과를 하나씩나누어 반환 | 실행방법<br>  ./gradlew ch03:recipe_3_6_i:build<br>./gradlew ch03:recipe_3_6_i:docker<br>./gradlew ch03:recipe_3_6_i:dockerRun<br>curl http://127.0.0.1:8080/court/members |
+| recipe_3_6_ii | 상태 코드 변경 및 커스텀 헤더 추가 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_6_ii:build<br>./gradlew ch03:recipe_3_6_ii:docker<br>./gradlew ch03:recipe_3_6_ii:dockerRun<br>curl -i http://127.0.0.1:8080/court/members | 
+| recipe_3_6_iii | 이벤트 형태로 결과 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_6_iii:build<br>./gradlew ch03:recipe_3_6_iii:docker<br>./gradlew ch03:recipe_3_6_iii:dockerRun<br>curl -i http://127.0.0.1:8080/court/members -stream | 
+| recipe_3_6_iv | SSE EventBuilder 사용 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_6_iv:build<br>./gradlew ch03:recipe_3_6_iv:docker<br>./gradlew ch03:recipe_3_6_iv:dockerRun<br>curl -i http://127.0.0.1:8080/court/members -stream |
+
+각 recipe 실행이 끝나면 아래 명령어로 docker 컨테이너를 정리해줍니다. 
+- ./gradlew ch03:recipe_3_2_ii:dockerStop
+- ./gradlew ch03:recipe_3_2_ii:dockerRemoveContainer
+- ./gradlew ch03:recipe_3_2_ii:clean
