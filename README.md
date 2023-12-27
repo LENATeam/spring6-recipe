@@ -26,8 +26,8 @@ Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(
 ## 환경 구축 가이드
 
 - <b>[IntelliJ](build/intellij-guide.md)</b>  
-- <b>[Eclipse]()</b>
-- <b>[STS]()</b>
+- <b>[Eclipse]</b>
+- <b>[STS](build/sts-guide.md)</b>
 
 ## 빌드 방법
 
