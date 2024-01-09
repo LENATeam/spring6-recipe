@@ -1,10 +1,11 @@
 # 6장
 
 1. WSL 이용해서 구성하기 (powershell 이용)
+
+    원하는 OS을 선택해서 설치 진행 (여기서는 OracleLinux_8_7 으로 진행)
+   
     1. 설치 os 확인
-
-        원하는 OS을 선택해서 설치 진행 (여기서는 OracleLinux_8_7 으로 진행) 
-
+       
         1. wsl —list —online 
             
             ```bash
@@ -43,29 +44,29 @@
             Installation successful!
             ```
             
-    2. docker 설치 
+    3. docker 설치 
         1. 다운로드 경로 ([WSL2 용 Docker](https://docs.docker.com/desktop/wsl/#download))
             1. [Docker Desktop For windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?_gl=1*1vdmlsd*_ga*MTQ0NzE3NjA3LjE3MDQ2MTkzMDQ.*_ga_XJWPQMJYHQ*MTcwNDYxOTMwMy4xLjEuMTcwNDYxOTQwMS41NS4wLjA).
         2. 다운 받은 Docker Desktop Installer.exe  설치 
         3. 실행
+
+            ![Untitled 1](https://github.com/LENATeam/spring6-recipe/assets/104717866/4687d1b3-f8f9-485d-98dd-9110ade4fced)
             
-            ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%201.png)
-            
-        4. continue without signing in 으로 진행 후 우측 상단의 setting을 클릭
-        5. Use the WSL 2 based engine (Windows Home can only run the WSL 2 backend 선택 
-        6. setting > Resources > WSL integration 에 설정확인
+        5. continue without signing in 으로 진행 후 우측 상단의 setting을 클릭
+        6. Use the WSL 2 based engine (Windows Home can only run the WSL 2 backend 선택 
+        7. setting > Resources > WSL integration 에 설정확인
             1. default 로 default WSL distro으로 실행 됨 
             2. Enable integration with additional distros: 에서 설치한 버전 Enable
-                
-                ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%202.png)
+      
+                ![Untitled 2](https://github.com/LENATeam/spring6-recipe/assets/104717866/fec0b13c-91d5-4c4b-929b-b00b97cbffd5)
                 
             3. Apply & restart 클릭
-        7. k8s 설치 
+        8. k8s 설치 
             1. setting > Kubernetes 에서 Enable Kubernetes을 check 후 Apply & restart
             
-            ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%203.png)
+            ![Untitled 3](https://github.com/LENATeam/spring6-recipe/assets/104717866/9c88e895-6dde-4ee8-b181-0c4ddf352966)
             
-        8. kubectl 은 별도로 설치 필요 
+        9. kubectl 은 별도로 설치 필요 
             1. x86 : curl -LO "https://dl.k8s.io/release/**$(**curl -L -s https://dl.k8s.io/release/stable.txt**)**/bin/linux/amd64/kubectl"
                 
                 ```bash
@@ -165,7 +166,7 @@
                 ```
                 
             
-        9. WSL 접속하여 docker info으로 확인 
+        10. WSL 접속하여 docker info으로 확인 
             
             ```bash
             $docker info
@@ -187,7 +188,7 @@
             ```
             
         
-    3. postgres DB을 설치 및 기동 
+    4. postgres DB을 설치 및 기동 
         1. bin\postgres.sh 와 bin\psql.sh 으로 실행 (WSL 에 접속 후 실행- root 접)
         2. bin\postgres.sh - postgres 을 실행(image 없을 경우 Image을 다운도 진행)
             
@@ -215,15 +216,15 @@
             ```
             
         3. 실행
-            1. Docker Desktop에서 stop 또는 기동  (Action > Stop 또는 Start )
-                
-                ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%204.png)
-                
-        4. Docker Desktop 에서 확인 
-            
-            ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%205.png)
-            
-        5. 접속
+            - Docker Desktop에서 stop 또는 기동  (Action > Stop 또는 Start )
+               
+                ![Untitled 4](https://github.com/LENATeam/spring6-recipe/assets/104717866/8882582a-72b1-48fb-88e0-a3db55a0fca4)
+                               
+        4. Docker Desktop 에서 확인
+       
+            ![Untitled 5](https://github.com/LENATeam/spring6-recipe/assets/104717866/5a63d77b-6c33-4d0c-94c5-bcd1f9de2a97)
+                  
+        6. 접속
             1. bin\psql.sh 사용 
                 
                 ```bash
@@ -245,8 +246,8 @@
                 (1 row)
                 ```
                 
-                ![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled%206.png)
-                
+                ![Untitled 6](https://github.com/LENATeam/spring6-recipe/assets/104717866/566bc634-a21d-4f0c-a46e-8447340efe2c)
+                                
                 아래 생성된 container을 통해 postgresql을 접속 함 
                 
             2. Database 생성 및 조회 
