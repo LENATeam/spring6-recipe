@@ -90,3 +90,5 @@
             
         3. 다른 명령어는 help; 을 실행하여 확인이 가능합니다. 
         4. 저장된 데이터 확인도 가능(select * form 테이블명 ; )
+2. 참고 
+    1. spring-batch-schema list : [https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core](https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core)
