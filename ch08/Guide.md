@@ -90,5 +90,19 @@
             
         3. 다른 명령어는 help; 을 실행하여 확인이 가능합니다. 
         4. 저장된 데이터 확인도 가능(select * form 테이블명 ; )
-2. 참고 
-    1. spring-batch-schema list : [https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core](https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core)
+2. 실습시 CSV 파일을 필요로 함 
+    1. 경로 
+        1. UserJob.java에서 경로를 확인 
+        2. **@Value("file:${user.home}/batches/registrations.csv")** 선언된 동일하게 파일명을 위치 
+        3. window 기준 :  C:\Users\사용자명\batches\registrations.csv
+        4. 또는 @Value의 경로를 변경해서 실습을 진행 
+    2. 파일  아래와 같은 형식으로 작성 (메모장 및 확장명 csv로 저장)
+        
+        ```markdown
+        first11,last11,company11,address11,city11,state11,zip11,county11,url11,phone11,fax11
+        first12,last12,company12,address12,city12,state12,zip12,county12,url12,phone12,fax12
+        first13,last13,company13,address13,city13,state13,zip13,county13,url13,phone13,fax13
+        ```
+        
+3. schema 참고 
+    1. [spring-batch-schema-list](https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core)
