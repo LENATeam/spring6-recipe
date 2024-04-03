@@ -14,3 +14,5 @@
 | recipe_11_5_BackOffice <br> recipe_11_5_FrontDesk | JMS 커넥션 캐싱 및 풀링 예제 | BackOfficeConfiguration.java indentation 수정 |
 | recipe_11_6_i_BackOffice <br> recipe_11_6_i_FrontDesk | RabbitMQ 메시지 송수신 예제 | bin/rabbitmq.sh 실행해서 RabbitMQ 기동 후 실행 <br> bin/docker-compose-rabbitmq.yml 수정 : "services:" 빠져있어서 추가함 |
 | recipe_11_6_ii_BackOffice <br> recipe_11_6_ii_FrontDesk | RabbitTemplate으로 RabbitMQ 메시지 송수신 예제 | |
+| recipe_11_7_i_BackOffice <br> recipe_11_7_i_FrontDesk | Kafka로 메시지 송수신 예제 | 기존 kafka.sh 나 docker-compose-kafka.yml으로 kafka, zookeeper를 실행시켰을 때 ches/kafka 이미지에서 버전문제가 발생해서 kafka-modified.sh 와 docker-compose-kafka-modified.yml을 추가했습니다. |
+| recipe_11_7_ii_BackOffice <br> recipe_11_7_ii_FrontDesk | 메시지 컨버터 적용해 Kafka로 메시지 송수신 예제 | Kafka로 메시지 송수신 예제 | 기존 kafka.sh 나 docker-compose-kafka.yml으로 kafka, zookeeper를 실행시켰을 때 ches/kafka 이미지에서 버전문제가 발생해서 kafka-modified.sh 와 docker-compose-kafka-modified.yml을 추가했습니다. |
