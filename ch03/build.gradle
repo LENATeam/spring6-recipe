@@ -58,17 +58,17 @@ subprojects { subproject ->
 	}
 }
 
-project('recipe_3_2_iv') { project ->
-	dependencies {
-		implementation group: 'com.google.code.gson', name: 'gson'
-	}
-}
-
-project('recipe_3_2_v') { project ->
-	dependencies {
-		implementation group: 'com.google.code.gson', name: 'gson'
-	}
-}
+//project('recipe_3_2_iv') { project ->
+//	dependencies {
+//		implementation group: 'com.google.code.gson', name: 'gson'
+//	}
+//}
+//
+//project('recipe_3_2_v') { project ->
+//	dependencies {
+//		implementation group: 'com.google.code.gson', name: 'gson'
+//	}
+//}
 
 
 project('recipe_3_5_i') {
