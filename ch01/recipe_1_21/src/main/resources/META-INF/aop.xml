@@ -2,12 +2,11 @@
         "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
 
 <aspectj>
-    <weaver>
-        <include within="com.apress.springrecipes.calculator.*"/>
-    </weaver>
+	<weaver options="-verbose">
+		<include within="com.apress.spring6recipes.calculator.*"/>
+	</weaver>
 
-    <aspects>
-        <aspect
-                name="com.apress.spring6recipes.calculator.ComplexCachingAspect"/>
-    </aspects>
+	<aspects>
+		<aspect name="com.apress.spring6recipes.calculator.ComplexCachingAspect"/>
+	</aspects>
 </aspectj>
