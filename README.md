@@ -20,13 +20,13 @@ Release v1.0은 레시피(책)의 이해를 돕기위해 원본 레파지토리(
 
 1. Java19 설치
 2. https://gradle.org [Gradle] 설치(또는 프로젝트와 함께 제공된 Gradle Wrapper 사용)
-3. IDE설치. IDE별 설치 가이드는 아래의 환경 구축 가이드를 참고하시기 바랍니다. 가이드는 IntelliJ, Eclipse, STS를 제공합니다.
+3. IDE설치. IDE별 설치 가이드는 아래의 환경 구축 가이드를 참고하시기 바랍니다. 가이드는 IntelliJ, STS를 제공합니다.
 4. (권고)도커 설치. http://docker.com을 사용해 데이터베이스나 샘플 웹 애플리케이션을 실행할 수 있습니다.
 
 ## 환경 구축 가이드
 
-- <b>[IntelliJ](build/intellij-guide.md)</b>
-- <b>[STS](build/sts-guide.md)</b>
+- <b>[IntelliJ](guide/intellij-guide.md)</b>
+- <b>[STS](guide/sts-guide.md)</b>
 
 ## 빌드 방법
 
