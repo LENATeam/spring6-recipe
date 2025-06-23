@@ -10,8 +10,8 @@ configure(subprojects.findAll { !it.name.contains('shared')}) {
     dependencies {
         implementation(project(":ch04:recipe_4_shared"))
         implementation group: 'org.springframework', name: 'spring-context'
-        implementation group: 'org.springframework', name: 'spring-webflux'
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty-http'
+        implementation group: 'org.springframework', name: 'spring-webflux', version: '6.1.21'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty-http', version: '1.2.7'
     }
 }
 
