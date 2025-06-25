@@ -6,8 +6,6 @@ public abstract class Product {
 
 	private final double price;
 
-	private double discount;
-
 	public Product(String name, double price) {
 		this.name = name;
 		this.price = price;

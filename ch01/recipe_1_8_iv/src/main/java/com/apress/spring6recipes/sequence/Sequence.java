@@ -16,7 +16,6 @@ public class Sequence {
 	private PrefixGenerator prefixGenerator;
 
 	public Sequence(String suffix, int initial) {
-		this.prefixGenerator = prefixGenerator;
 		this.suffix = suffix;
 		this.initial = initial;
 	}
