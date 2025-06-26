@@ -15,7 +15,14 @@ public class ErrorHandlingConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-		resolvers.add(handlerExceptionResolver());
+		var mappings = new Properties();
+		mappings.setProperty(ReservationNotAvailableException.class.getName(), "reservationNotAvailable");
+
+		var resolver = new SimpleMappingExceptionResolver();
+		resolver.setExceptionMappings(mappings);
+		resolver.setDefaultErrorView("error");
+
+		resolvers.add(resolver);
 	}
 
 	@Bean

@@ -1,4 +1,4 @@
-package com.apress.spring6recipes.court.config;
+package com.apress.spring6recipes.court.web.config;
 
 import com.apress.spring6recipes.court.service.ReservationService;
 import org.springframework.context.annotation.ComponentScan;
