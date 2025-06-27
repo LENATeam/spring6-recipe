@@ -31,7 +31,7 @@ public class Main {
 							.withIdentity("documentReplicationTrigger")
 							.startAt(new Date(System.currentTimeMillis() + 5000))
 							.forJob(job)
-							.withSchedule(CronScheduleBuilder.cronSchedule("0/60 * * * * ?"))
+							.withSchedule(CronScheduleBuilder.cronSchedule("0 0/1 * * * ?"))
 							.build();
 
 			var scheduler = new StdSchedulerFactory().getScheduler();
