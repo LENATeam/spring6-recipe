@@ -14,4 +14,10 @@ public class Initializer extends AbstractAnnotationConfigMessageDispatcherServle
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class<?>[]{SpringWsConfiguration.class};
 	}
+
+	@Override
+	protected String[] getServletMappings() {
+		return new String[]{"/springws/*"};
+	}
+
 }

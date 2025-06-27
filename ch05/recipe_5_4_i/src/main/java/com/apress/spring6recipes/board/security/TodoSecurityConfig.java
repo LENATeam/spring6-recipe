@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -69,13 +70,13 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 						.failureUrl("/login?error=true");
 		http.logout().logoutSuccessUrl("/logout-success").permitAll();
 
-		http.authorizeHttpRequests(auth ->
-					auth
-						.requestMatchers(HttpMethod.DELETE, "/todos/*").access(
-								AuthorizationManagers.allOf(
-											AuthorityAuthorizationManager.hasAuthority("ADMIN"),
-											new LocalhostAuthorizationManager<>()))
-						.requestMatchers("/todos", "/todos/*").hasAuthority("USER"));
+		http.authorizeHttpRequests(auth -> auth
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "DELETE"))
+				.access(AuthorizationManagers.allOf(
+						AuthorityAuthorizationManager.hasAuthority("ADMIN"),
+						new LocalhostAuthorizationManager<>()))
+				.requestMatchers(new AntPathRequestMatcher("/todos", "GET")).hasAuthority("USER")
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "GET")).hasAuthority("USER"));
 		return http.build();
 	}
 }

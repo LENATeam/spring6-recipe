@@ -1,12 +1,16 @@
 package com.apress.spring6recipes.court.config;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@ComponentScan("com.apress.spring6recipes.court")
+@EnableWebMvc
 public class ViewResolverConfiguration implements WebMvcConfigurer {
 
 	@Override

@@ -45,9 +45,9 @@ project('recipe_5_shared') {
         api group: 'org.springframework.security', name: 'spring-security-web'
         api group: 'org.springframework.security', name: 'spring-security-config'
 
-        api group: 'org.thymeleaf', name: 'thymeleaf'
-        api group: 'org.thymeleaf', name: 'thymeleaf-spring6'
-        api group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity6'
+        api group: 'org.thymeleaf', name: 'thymeleaf', version: '3.1.3.RELEASE'
+        api group: 'org.thymeleaf', name: 'thymeleaf-spring6', version: '3.1.3.RELEASE'
+        api group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity6', version: '3.1.3.RELEASE'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
     }
@@ -56,7 +56,7 @@ project('recipe_5_shared') {
 project('recipe_5_3_v') {
     dependencies {
         implementation group: 'org.springframework.security', name: 'spring-security-ldap'
-        implementation group: 'org.springframework.ldap', name: 'spring-ldap-core'
+        implementation group: 'org.springframework.ldap', name: 'spring-ldap-core', version:'3.3.1'
     }
 }
 
@@ -81,7 +81,7 @@ project('recipe_5_8_i') {
         implementation group: 'org.springframework', name: 'spring-webflux'
         implementation group: 'org.springframework', name: 'spring-r2dbc'
 
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.2.7'
         implementation group: 'io.r2dbc', name: 'r2dbc-h2'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
@@ -101,7 +101,7 @@ project('recipe_5_8_ii') {
         implementation group: 'org.springframework', name: 'spring-webflux'
         implementation group: 'org.springframework', name: 'spring-r2dbc'
 
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.2.7'
         implementation group: 'io.r2dbc', name: 'r2dbc-h2'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
@@ -121,7 +121,7 @@ project('recipe_5_8_iii') {
         implementation group: 'org.springframework', name: 'spring-webflux'
         implementation group: 'org.springframework', name: 'spring-r2dbc'
 
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.2.7'
         implementation group: 'io.r2dbc', name: 'r2dbc-h2'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
@@ -141,7 +141,7 @@ project('recipe_5_8_iv') {
         implementation group: 'org.springframework', name: 'spring-webflux'
         implementation group: 'org.springframework', name: 'spring-r2dbc'
 
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.2.7'
         implementation group: 'io.r2dbc', name: 'r2dbc-h2'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
@@ -161,7 +161,7 @@ project('recipe_5_8_v') {
         implementation group: 'org.springframework', name: 'spring-webflux'
         implementation group: 'org.springframework', name: 'spring-r2dbc'
 
-        implementation group: 'io.projectreactor.netty', name: 'reactor-netty'
+        implementation group: 'io.projectreactor.netty', name: 'reactor-netty', version: '1.2.7'
         implementation group: 'io.r2dbc', name: 'r2dbc-h2'
 
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'

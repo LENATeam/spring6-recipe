@@ -53,10 +53,12 @@ class TodoServiceImpl implements TodoService {
 		acl.insertAce(3, READ, authoritySid, true);
 		acl.insertAce(4, WRITE, authoritySid, true);
 		acl.insertAce(5, DELETE, authoritySid, true);
+
+		mutableAclService.updateAcl(acl);
 	}
 
 	@Override
-	@PreAuthorize("hasPermission(#id, 'com.apress.springrecipes.board.Todo', 'write')")
+	@PreAuthorize("hasPermission(#id, 'com.apress.spring6recipes.board.Todo', 'write')")
 	public void complete(long id) {
 		findById(id)
 						.ifPresent((todo) -> {
@@ -66,7 +68,7 @@ class TodoServiceImpl implements TodoService {
 	}
 
 	@Override
-	@PreAuthorize("hasPermission(#id, 'com.apress.springrecipes.board.Todo', 'delete')")
+	@PreAuthorize("hasPermission(#id, 'com.apress.spring6recipes.board.Todo', 'delete')")
 	public void remove(long id) {
 		todoRepository.remove(id);
 

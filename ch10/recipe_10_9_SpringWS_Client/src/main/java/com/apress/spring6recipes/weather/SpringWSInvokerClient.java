@@ -8,6 +8,8 @@ public class SpringWSInvokerClient {
 	public static void main(String[] args) {
 		var cfg = SpringWsClientConfiguration.class;
 		try (var ctx = new AnnotationConfigApplicationContext()) {
+			ctx.register(SpringWsClientConfiguration.class);
+			ctx.refresh();
 			var client = ctx.getBean(WeatherServiceClient.class);
 			var temperature = client.getTodayTemperature("Houston");
 			System.out.println("Min temperature : " + temperature.min());
