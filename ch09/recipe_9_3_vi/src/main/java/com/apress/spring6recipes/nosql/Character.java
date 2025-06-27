@@ -14,7 +14,7 @@ import java.util.List;
 @Node
 public class Character {
 
-	private final String name;
+	private String name;
 	@Relationship(type="FRIENDS_WITH")
 	private @AccessType(AccessType.Type.FIELD) List<Character> friends = new ArrayList<>();
 
@@ -26,6 +26,10 @@ public class Character {
 	@Relationship(type = "MASTER_OF")
 	private Character apprentice;
 
+	public Character() {
+		
+	}
+	
 	public Character(String name) {
 		this.name=name;
 	}

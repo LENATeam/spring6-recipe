@@ -3,8 +3,6 @@ package com.apress.spring6recipes.nosql;
 import com.apress.spring6recipes.nosql.config.MongoConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.List;
-
 public class Main {
 
 	private static final String COUNT = "Number of Vehicles: %d%n";

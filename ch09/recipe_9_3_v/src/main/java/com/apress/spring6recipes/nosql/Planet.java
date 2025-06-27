@@ -8,11 +8,15 @@ import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 @Node
 public class Planet {
 
-	private final String name;
+	private String name;
 
 	@Id
 	@GeneratedValue(UUIDStringGenerator.class)
 	private String id;
+
+	public Planet() {
+
+	}
 
 	public Planet(String name) {
 		this.name = name;

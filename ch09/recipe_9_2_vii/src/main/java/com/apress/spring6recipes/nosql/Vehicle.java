@@ -2,7 +2,6 @@ package com.apress.spring6recipes.nosql;
 
 import java.util.UUID;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		var cfg = StarwarsConfig.class;
 		try (var ctx = new AnnotationConfigApplicationContext(cfg)) {
 			var service = ctx.getBean(StarwarsService.class);

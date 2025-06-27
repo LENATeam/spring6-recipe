@@ -3,14 +3,8 @@ package com.apress.spring6recipes.nosql;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.DataType;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 import jakarta.annotation.PreDestroy;
 
