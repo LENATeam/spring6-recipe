@@ -1,4 +1,5 @@
-FROM eclipse-temurin:19-jdk-alpine
+#FROM eclipse-temurin:19-jdk-alpine
+FROM eclipse-temurin:19-jdk
 
 ENV CATALINA_HOME=/opt/tomcat \
     TOMCAT_MAJOR="10" \
@@ -19,6 +20,10 @@ RUN rm -rf \
   ${CATALINA_HOME}/webapps/manager
 
 ENV JAVA_OPTS="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n -Djava.compiler=NONE"
+
+RUN echo "org.springframework.web.context.request.async.level = FINE" >> $CATALINA_HOME/conf/logging.properties \
+ && echo "java.util.logging.ConsoleHandler.level = FINE" >> $CATALINA_HOME/conf/logging.properties \
+ && echo ".level = INFO" >> $CATALINA_HOME/conf/logging.properties
 
 COPY court.war $CATALINA_HOME/webapps/
 
