@@ -10,6 +10,7 @@ import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.connection.JmsTransactionManager;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Configuration
 @EnableTransactionManagement
@@ -35,7 +36,7 @@ public class FrontOfficeConfiguration {
 	}
 
 	@Bean
-	public JmsTransactionManager transactionManager(ConnectionFactory connectionFactory) {
+	public JmsTransactionManager transactionManager(@Qualifier("cachingConnectionFactory") ConnectionFactory connectionFactory) {
 		return new JmsTransactionManager(connectionFactory);
 	}
 

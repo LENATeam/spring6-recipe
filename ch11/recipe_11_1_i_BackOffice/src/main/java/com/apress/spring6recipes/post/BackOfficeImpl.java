@@ -1,7 +1,6 @@
 package com.apress.spring6recipes.post;
 
 import jakarta.jms.JMSException;
-import jakarta.jms.JMSRuntimeException;
 import jakarta.jms.MapMessage;
 import jakarta.jms.Message;
 import jakarta.jms.Session;
