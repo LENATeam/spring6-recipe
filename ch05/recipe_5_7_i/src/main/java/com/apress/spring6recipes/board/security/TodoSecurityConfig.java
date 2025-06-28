@@ -45,13 +45,23 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 	}
 
 	private void initializeUsers(JdbcUserDetailsManager users) {
-		var user1 = User.withDefaultPasswordEncoder().username("marten@deinum.biz").password("user").authorities("USER").build();
-		var user2 = User.withDefaultPasswordEncoder().username("jdoe@does.net").password("unknown").disabled(true).authorities("USER").build();
-		var admin = User.withDefaultPasswordEncoder().username("admin@ya2do.io").password("admin").authorities("USER", "ADMIN").build();
+		if (!users.userExists("marten@deinum.biz")) {
+			var user1 = User.withDefaultPasswordEncoder()
+					.username("marten@deinum.biz").password("user").authorities("USER").build();
+			users.createUser(user1);
+		}
 
-		users.createUser(user1);
-		users.createUser(user2);
-		users.createUser(admin);
+		if (!users.userExists("jdoe@does.net")) {
+			var user2 = User.withDefaultPasswordEncoder()
+					.username("jdoe@does.net").password("unknown").disabled(true).authorities("USER").build();
+			users.createUser(user2);
+		}
+
+		if (!users.userExists("admin@ya2do.io")) {
+			var admin = User.withDefaultPasswordEncoder()
+					.username("admin@ya2do.io").password("admin").authorities("USER", "ADMIN").build();
+			users.createUser(admin);
+		}
 	}
 
 	@Bean
