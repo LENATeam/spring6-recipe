@@ -110,6 +110,10 @@ project('recipe_4_1_ii') {
     apply plugin: 'com.palantir.docker'
     apply plugin: 'com.palantir.docker-run'
 
+    war {
+        archiveFileName = "ROOT.war"
+    }
+
     dependencies {
         providedCompile group: 'jakarta.servlet', name: 'jakarta.servlet-api'
     }
@@ -135,6 +139,10 @@ project('recipe_4_1_iii') {
 
     dependencies {
         providedCompile group: 'jakarta.servlet', name: 'jakarta.servlet-api'
+    }
+
+    war {
+        archiveFileName = "ROOT.war"
     }
 
     docker {
