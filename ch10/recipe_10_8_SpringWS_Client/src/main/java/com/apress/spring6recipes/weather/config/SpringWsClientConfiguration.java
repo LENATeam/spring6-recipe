@@ -23,8 +23,7 @@ public class SpringWsClientConfiguration {
 	@Bean
 	public WebServiceTemplate webServiceTemplate() {
 		var webServiceTemplate = new WebServiceTemplate();
-//		webServiceTemplate.setDefaultUri("http://localhost:8080/springws/services");
-		webServiceTemplate.setDefaultUri("http://localhost:8080/springws/");
+		webServiceTemplate.setDefaultUri("http://localhost:8080/springws/services");
 		return webServiceTemplate;
 	}
 }

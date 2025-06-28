@@ -18,7 +18,7 @@ public class SpringWsConfiguration {
 	public DefaultWsdl11Definition temperature() {
 		var temperature = new DefaultWsdl11Definition();
 		temperature.setPortTypeName("Weather");
-		temperature.setLocationUri("/");
+		temperature.setLocationUri("/springws/services");
 		temperature.setSchema(temperatureSchema());
 		return temperature;
 	}
