@@ -13,7 +13,6 @@ class Neo4jStarwarsRepository implements StarwarsRepository {
 	private static final String CREATE_PLANET_REL_QUERY = "MATCH (a:Character), (b:Planet) WHERE a.id=$aid AND b.id=$bid CREATE (a)-[r:LOCATION]->(b)";
 	private static final String CREATE_FRIENDS_REL_QUERY = "MATCH (a:Character), (b:Character) WHERE a.id=$aid AND b.id=$bid CREATE (a)-[r:FRIENDS_WITH]->(b)";
 	private static final String CREATE_MASTER_REL_QUERY = "MATCH (a:Character), (b:Character) WHERE a.id=$aid AND b.id=$bid CREATE (a)-[r:MASTER_OF]->(b)";
-	private static final String DELETE_ALL_QUERY = "MATCH (n) DETACH DELETE n";
 
 	private final Driver db;
 

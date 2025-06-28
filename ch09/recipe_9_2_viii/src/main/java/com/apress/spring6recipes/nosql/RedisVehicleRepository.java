@@ -5,7 +5,6 @@ import java.util.Map;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
 
-import jakarta.annotation.PreDestroy;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -44,10 +43,5 @@ public class RedisVehicleRepository implements VehicleRepository{
 	@Override
 	public Mono<Vehicle> findByVehicleNo(String vehicleNo) {
 		return redis.opsForHash().get(DB_NAME, vehicleNo).cast(Vehicle.class);
-	}
-
-	@PreDestroy
-	public void cleanUp() {
-		findAll().map(this::delete).subscribe();
 	}
 }
