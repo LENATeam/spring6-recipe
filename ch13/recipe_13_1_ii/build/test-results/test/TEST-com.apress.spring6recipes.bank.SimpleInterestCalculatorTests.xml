@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-06-29T03:45:32" hostname="YOUNGK" time="0.043">
+  <properties/>
+  <testcase name="[1] amount=-10000.0, year=2" classname="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" time="0.031"/>
+  <testcase name="[2] amount=10000.0, year=-2" classname="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" time="0.001"/>
+  <testcase name="[3] amount=-10000.0, year=-2" classname="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" time="0.001"/>
+  <testcase name="[1] amount=10000.0, year=2, expectedInterest=1000.0" classname="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" time="0.002"/>
+  <testcase name="[2] amount=10000.0, year=1, expectedInterest=500.0" classname="com.apress.spring6recipes.bank.SimpleInterestCalculatorTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
