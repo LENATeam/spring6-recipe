@@ -36,17 +36,17 @@ public class ShopConfiguration {
 	}
 
 	@Bean
-	public DiscountFactoryBean discountFactoryBeanCDRW(Disc cdrw) {
+	public DiscountFactoryBean discountFactoryBeanCDRW() {
 		var factory = new DiscountFactoryBean();
-		factory.setProduct(cdrw);
+		factory.setProduct(cdrw());
 		factory.setDiscount(0.1);
 		return factory;
 	}
 
 	@Bean
-	public DiscountFactoryBean discountFactoryBeanDVDRW(Disc dvdrw) {
+	public DiscountFactoryBean discountFactoryBeanDVDRW() {
 		var factory = new DiscountFactoryBean();
-		factory.setProduct(dvdrw);
+		factory.setProduct(dvdrw());
 		factory.setDiscount(0.1);
 		return factory;
 	}
