@@ -55,8 +55,13 @@ public class ReservationFormController {
 		} else {
 			reservationService.make(reservation);
 			status.setComplete();
-			return "redirect:reservationSuccess";
+			return "redirect:/reservationForm/reservationSuccess";
 		}
+	}
+
+	@GetMapping("/reservationSuccess")
+	public String successPage() {
+		return "reservationSuccess"; // → /WEB-INF/jsp/reservationSuccess.jsp
 	}
 
 	@ExceptionHandler(ReservationNotAvailableException.class)

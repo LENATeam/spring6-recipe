@@ -17,10 +17,7 @@ import org.springframework.security.acls.domain.SpringCacheBasedAclCache;
 import org.springframework.security.acls.jdbc.BasicLookupStrategy;
 import org.springframework.security.acls.jdbc.JdbcMutableAclService;
 import org.springframework.security.acls.jdbc.LookupStrategy;
-import org.springframework.security.acls.model.AclCache;
-import org.springframework.security.acls.model.AclService;
-import org.springframework.security.acls.model.Permission;
-import org.springframework.security.acls.model.PermissionGrantingStrategy;
+import org.springframework.security.acls.model.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.sql.DataSource;
@@ -85,7 +82,7 @@ public class TodoAclConfig {
 	}
 
 	@Bean
-	public AclService aclService(LookupStrategy lookupStrategy, AclCache aclCache) {
+	public MutableAclService aclService(LookupStrategy lookupStrategy, AclCache aclCache) {
 		return new JdbcMutableAclService(this.dataSource, lookupStrategy, aclCache);
 	}
 

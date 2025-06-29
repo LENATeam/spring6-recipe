@@ -1,4 +1,4 @@
-FROM eclipse-temurin:19-jdk-alpine
+FROM eclipse-temurin:19-jdk
 
 ENV CATALINA_HOME=/opt/tomcat \
     TOMCAT_MAJOR="10" \
@@ -20,7 +20,7 @@ RUN rm -rf \
 
 ENV JAVA_OPTS="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n -Djava.compiler=NONE"
 
-COPY court.war $CATALINA_HOME/webapps/
+COPY ROOT.war $CATALINA_HOME/webapps/
 
 EXPOSE 8080 5005
 

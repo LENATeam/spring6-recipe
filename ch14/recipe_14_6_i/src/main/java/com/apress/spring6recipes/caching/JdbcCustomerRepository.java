@@ -25,8 +25,10 @@ public class JdbcCustomerRepository implements CustomerRepository {
 	@Cacheable(value = "customers")
 	public Customer find(long customerId) {
 		var sql = "SELECT id, name FROM customer WHERE id=?";
-		return jdbc.queryForObject(sql, (rs, rowNum) ->
-						new Customer(rs.getLong(1), rs.getString(2)));
+		var results = jdbc.query(sql,
+				(rs, rowNum) -> new Customer(rs.getLong(1), rs.getString(2)),
+				customerId);
+		return results.isEmpty() ? null : results.get(0);
 	}
 
 	@Override

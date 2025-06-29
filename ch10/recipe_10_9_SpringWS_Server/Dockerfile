@@ -1,4 +1,4 @@
-FROM eclipse-temurin:19-jdk-alpine
+FROM eclipse-temurin:19-jdk
 
 ENV CATALINA_HOME=/opt/tomcat \
     TOMCAT_MAJOR="10" \

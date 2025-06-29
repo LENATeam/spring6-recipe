@@ -8,6 +8,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		var cfg = "com.apress.spring6recipes.replicator.config";
-		try (var ctx = new AnnotationConfigApplicationContext(cfg)) {}
-	}
+		try (var ctx = new AnnotationConfigApplicationContext(cfg)) {
+			Thread.sleep(300_000);
+		} catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

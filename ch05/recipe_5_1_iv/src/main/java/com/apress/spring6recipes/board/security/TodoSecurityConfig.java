@@ -12,6 +12,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -29,10 +30,10 @@ public class TodoSecurityConfig {
 						throws Exception {
 				http.csrf().csrfTokenRepository(csrfTokenRepository());
 				http.formLogin(Customizer.withDefaults());
-				http.authorizeHttpRequests(auth ->
-								auth
-									.requestMatchers(HttpMethod.DELETE, "/todos/*").hasAuthority("ADMIN")
-  								.requestMatchers("/todos", "/todos/*").hasAuthority("USER"));
+				http.authorizeHttpRequests(auth -> auth
+					.requestMatchers(new AntPathRequestMatcher("/todos", "GET")).hasAuthority("USER")
+					.requestMatchers(new AntPathRequestMatcher("/todos/*", "GET")).hasAuthority("USER")
+					.requestMatchers(new AntPathRequestMatcher("/todos/*", "DELETE")).hasAuthority("ADMIN"));
 				return http.build();
 		}
 

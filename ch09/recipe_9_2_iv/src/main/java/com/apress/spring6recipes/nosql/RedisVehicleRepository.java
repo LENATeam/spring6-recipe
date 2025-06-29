@@ -2,8 +2,6 @@ package com.apress.spring6recipes.nosql;
 
 import java.util.List;
 
-import org.springframework.util.SerializationUtils;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

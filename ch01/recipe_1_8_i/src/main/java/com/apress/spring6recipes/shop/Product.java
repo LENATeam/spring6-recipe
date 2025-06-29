@@ -1,14 +1,10 @@
 package com.apress.spring6recipes.shop;
 
-import java.text.DecimalFormat;
-
 public abstract class Product {
 
 	private final String name;
 
 	private final double price;
-
-	private double discount;
 
 	public Product(String name, double price) {
 		this.name = name;

@@ -28,13 +28,15 @@ dependencies {
     api(platform('org.glassfish.jaxb:jaxb-bom:3.0.2'))
 
     constraints {
-        api 'com.couchbase.client:java-client:3.4.1'
-        api 'redis.clients:jedis:4.3.1'
-        api 'com.github.librepdf:openpdf:1.3.30'
-        api 'com.github.ben-manes.caffeine:caffeine:3.1.2'
+        api 'com.couchbase.client:java-client:3.5.0'
+        api 'com.couchbase.client:core-io:2.5.0'
+        api 'org.springframework.data:spring-data-couchbase'
+        api 'redis.clients:jedis:6.0.0'
+        api 'com.github.librepdf:openpdf:1.4.2'
+        api 'com.github.ben-manes.caffeine:caffeine:3.2.1'
         api 'com.github.ben-manes.caffeine:jcache:3.1.2'
         api 'com.google.code.gson:gson:2.10'
-        api 'com.h2database:h2:2.1.214'
+        api 'com.h2database:h2:2.3.232'
         api 'com.rometools:rome:1.18.0'
         api 'com.sun.mail:jakarta.mail:2.0.1'
         api 'com.zaxxer:HikariCP:5.0.1'
@@ -55,7 +57,7 @@ dependencies {
         api 'org.apache.activemq:artemis-jakarta-client:2.27.1'
         api 'org.apache.activemq:artemis-jakarta-server:2.27.1'
         api 'org.apache.kafka:kafka-clients:3.3.1'
-        api 'org.apache.poi:poi-ooxml:5.2.3'
+        api 'org.apache.poi:poi-ooxml:5.4.1'
         api("org.apache.tomcat.embed:tomcat-embed-core:10.1.4")
         api("org.apache.tomcat.embed:tomcat-embed-websocket:10.1.4")
 
@@ -70,7 +72,7 @@ dependencies {
         api 'org.hamcrest:hamcrest:2.2'
         api 'org.hibernate.orm:hibernate-core:6.1.6.Final'
         api 'org.hibernate.orm:hibernate-jcache:6.1.6.Final'
-        api 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
+        api 'org.hibernate.validator:hibernate-validator:9.0.1.Final'
         api 'org.messaginghub:pooled-jms:3.0.0'
         api 'org.mongodb:mongodb-driver-core:4.8.1'
         api 'org.mongodb:mongodb-driver-sync:4.8.1'

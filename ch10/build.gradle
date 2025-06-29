@@ -143,7 +143,10 @@ project('recipe_10_8_SpringWS_Server') {
         implementation group: 'org.springframework.ws', name: 'spring-ws-core'
         implementation group: 'org.springframework.ws', name: 'spring-xml'
         implementation group: 'wsdl4j', name: 'wsdl4j'
-        implementation group: 'org.dom4j', name: 'dom4j'
+        implementation (group: 'org.dom4j', name: 'dom4j'){
+            exclude group: 'xpp3', module: 'xpp3'
+            exclude group: 'pull-parser', module: 'pull-parser'
+        }
         implementation group: 'jaxen', name: 'jaxen'
         implementation group: 'jakarta.jws', name: 'jakarta.jws-api'
         compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
@@ -153,7 +156,7 @@ project('recipe_10_8_SpringWS_Server') {
         name "s6r/spring-ws:$project.name"
         tags "$project.name"
         files war.outputs
-        dockerfile file('../Dockerfile')
+        dockerfile file('./Dockerfile')
     }
 
     dockerRun {
@@ -211,7 +214,7 @@ project('recipe_10_9_SpringWS_Server') {
         name "s6r/spring-ws:$project.name"
         tags "$project.name"
         files war.outputs
-        dockerfile file('../Dockerfile')
+        dockerfile file('./Dockerfile')
     }
 
     dockerRun {

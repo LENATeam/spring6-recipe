@@ -1,6 +1,5 @@
 package com.apress.spring6recipes.shop;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.apress.spring6recipes.shop.config.ShopConfiguration;

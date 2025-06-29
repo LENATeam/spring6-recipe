@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.apress.spring6recipes.court.web")
+@ComponentScan("com.apress.spring6recipes.court")
 public class CourtConfiguration {
 
 	@Bean
@@ -19,5 +19,4 @@ public class CourtConfiguration {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
-
 }

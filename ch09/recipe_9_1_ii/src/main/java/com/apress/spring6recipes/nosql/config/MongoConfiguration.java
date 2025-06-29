@@ -1,7 +1,6 @@
 package com.apress.spring6recipes.nosql.config;
 
 import com.apress.spring6recipes.nosql.MongoVehicleRepository;
-import com.apress.spring6recipes.nosql.VehicleRepository;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import org.springframework.context.annotation.Bean;

@@ -43,6 +43,12 @@ public class ReservationFormController {
 	@PostMapping
 	public String submitForm(@ModelAttribute("reservation") Reservation reservation) {
 		reservationService.make(reservation);
-		return "redirect:reservationSuccess";
+		return "redirect:/reservationForm/reservationSuccess";
 	}
+
+	@GetMapping("/reservationSuccess")
+	public String successPage() {
+		return "reservationSuccess"; // → /WEB-INF/jsp/reservationSuccess.jsp
+	}
+
 }

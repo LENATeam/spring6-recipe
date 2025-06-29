@@ -36,6 +36,6 @@ project('recipe_14_6_i') {
 project('recipe_14_7_i') {
     dependencies {
         implementation group: 'redis.clients', name: 'jedis'
-        implementation group: 'org.springframework.data', name: 'spring-data-redis'
+        implementation group: 'org.springframework.data', name: 'spring-data-redis', version: '3.5.1'
     }
 }

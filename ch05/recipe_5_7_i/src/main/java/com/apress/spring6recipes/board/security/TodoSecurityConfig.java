@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -44,13 +45,23 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 	}
 
 	private void initializeUsers(JdbcUserDetailsManager users) {
-		var user1 = User.withDefaultPasswordEncoder().username("marten@deinum.biz").password("user").authorities("USER").build();
-		var user2 = User.withDefaultPasswordEncoder().username("jdoe@does.net").password("unknown").disabled(true).authorities("USER").build();
-		var admin = User.withDefaultPasswordEncoder().username("admin@ya2do.io").password("admin").authorities("USER", "ADMIN").build();
+		if (!users.userExists("marten@deinum.biz")) {
+			var user1 = User.withDefaultPasswordEncoder()
+					.username("marten@deinum.biz").password("user").authorities("USER").build();
+			users.createUser(user1);
+		}
 
-		users.createUser(user1);
-		users.createUser(user2);
-		users.createUser(admin);
+		if (!users.userExists("jdoe@does.net")) {
+			var user2 = User.withDefaultPasswordEncoder()
+					.username("jdoe@does.net").password("unknown").disabled(true).authorities("USER").build();
+			users.createUser(user2);
+		}
+
+		if (!users.userExists("admin@ya2do.io")) {
+			var admin = User.withDefaultPasswordEncoder()
+					.username("admin@ya2do.io").password("admin").authorities("USER", "ADMIN").build();
+			users.createUser(admin);
+		}
 	}
 
 	@Bean
@@ -62,10 +73,10 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 						.defaultSuccessUrl("/todos")
 						.failureUrl("/login?error=true");
 		http.logout().logoutSuccessUrl("/logout-success").permitAll();
-		http.authorizeHttpRequests(auth ->
-						auth
-										.requestMatchers(HttpMethod.DELETE, "/todos/*").hasAuthority("ADMIN")
-										.requestMatchers("/todos", "/todos/*").hasAuthority("USER"));
+		http.authorizeHttpRequests(auth -> auth
+				.requestMatchers(new AntPathRequestMatcher("/todos", "GET")).hasAuthority("USER")
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "GET")).hasAuthority("USER")
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "DELETE")).hasAuthority("ADMIN"));
 		return http.build();
 	}
 }

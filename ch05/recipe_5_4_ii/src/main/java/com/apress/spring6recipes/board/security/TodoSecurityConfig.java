@@ -3,6 +3,8 @@ package com.apress.spring6recipes.board.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authorization.AuthorityAuthorizationManager;
+import org.springframework.security.authorization.AuthorizationManagers;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -11,6 +13,7 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.expression.WebExpressionAuthorizationManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -68,11 +71,12 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 						.defaultSuccessUrl("/todos")
 						.failureUrl("/login?error=true");
 		http.logout().logoutSuccessUrl("/logout-success").permitAll();
-		http.authorizeHttpRequests(auth ->
-						auth
-							.requestMatchers(HttpMethod.DELETE, "/todos/*").access(
-									new WebExpressionAuthorizationManager("hasRole('ROLE_ADMIN') and (hasIpAddress('127.0.0.1') or hasIpAddress('0:0:0:0:0:0:0:1'))"))
-							.requestMatchers("/todos", "/todos/*").hasAuthority("USER"));
+		http.authorizeHttpRequests(auth -> auth
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "DELETE"))
+				.access(new WebExpressionAuthorizationManager(
+						"hasRole('ROLE_ADMIN') and (hasIpAddress('127.0.0.1') or hasIpAddress('0:0:0:0:0:0:0:1'))"))
+				.requestMatchers(new AntPathRequestMatcher("/todos", "GET")).hasAuthority("USER")
+				.requestMatchers(new AntPathRequestMatcher("/todos/*", "GET")).hasAuthority("USER"));
 		return http.build();
 	}
 }

@@ -29,6 +29,6 @@ public class ReservationQueryController {
 			reservations = reservationService.query(courtName);
 		}
 		model.addAttribute("reservations", reservations);
-		return "/WEB-INF/jsp/reservationQuery.jsp";
+		return "reservationQuery";
 	}
 }

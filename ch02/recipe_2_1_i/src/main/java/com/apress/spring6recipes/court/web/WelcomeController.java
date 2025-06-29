@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/welcome")
@@ -13,7 +14,7 @@ public class WelcomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String welcome(Model model) {
-		model.addAttribute("today", LocalDate.now());
-		return "/WEB-INF/jsp/welcome.jsp";
+		model.addAttribute("today", new Date());
+		return "welcome";
 	}
 }
