@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public record TournamentContent(String author, LocalDate publicationDate,
-																String name, String link, int id) {
+								String name, String link, int id) {
 
 	private static final AtomicInteger idCounter = new AtomicInteger();
 

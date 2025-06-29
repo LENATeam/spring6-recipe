@@ -18,8 +18,8 @@ public class CourtExceptionHandlers extends ResponseEntityExceptionHandler {
 
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-																																HttpHeaders headers, HttpStatusCode status,
-																																WebRequest request) {
+										HttpHeaders headers, HttpStatusCode status,
+										WebRequest request) {
 		var errors = ex.getAllErrors().stream()
 						.collect(Collectors.toMap(this::getKey, this::resolveMessage));
 		ex.getBody().setProperty("errors", errors);

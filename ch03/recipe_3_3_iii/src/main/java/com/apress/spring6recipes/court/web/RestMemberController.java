@@ -55,6 +55,6 @@ public class RestMemberController {
 		return ex.getFieldErrors().stream()
 						.collect(
 								Collectors.toMap(FieldError::getField,
-																 FieldError::getDefaultMessage));
+												 FieldError::getDefaultMessage));
 	}
 }
