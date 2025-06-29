@@ -15,32 +15,32 @@
     1. 제공되는 소스 path : spring6-recipe\ch13\build.gradle
 
 
-    ```
-    project('recipe_13_1_i') {
-        test {
-            useJUnitPlatform()
-            testLogging {
-                events "passed", "skipped", "failed"
+        ```
+        project('recipe_13_1_i') {
+            test {
+                useJUnitPlatform()
+                testLogging {
+                    events "passed", "skipped", "failed"
+                }
+            }
+
+            dependencies {
+                testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
             }
         }
 
-        dependencies {
-            testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
-        }
-    }
-
-    ```
+        ```
 
     2. maven의 경우 path : pom.xml
 
 
-    ```
-    <dependency>
-    <groupId>org.testng /groupId>
-    <artifactId>testng /artifactId>
-    <version>7.6.1 /version>
-    </dependency>
-    ```
+        ```
+        <dependency>
+        <groupId>org.testng /groupId>
+        <artifactId>testng /artifactId>
+        <version>7.6.1 /version>
+        </dependency>
+        ```
 
 
 3. spring6-recipe 경로 (gradlew  또는 gradlew.bat을 있는 경로)로 이동
@@ -76,3 +76,13 @@
     BUILD SUCCESSFUL in 2s
     ```
 
+    아래 경로에서 확인이 가능 
+    
+    spring6-recipe/ch13/recipe_13_x_xx/build/reports/tests/test/index.html
+
+
+6. 오류 발생시 충돌로 인한 경우가 있으므로 초기화 
+
+    ```
+    .\gradlew.bat clean build 
+    ```

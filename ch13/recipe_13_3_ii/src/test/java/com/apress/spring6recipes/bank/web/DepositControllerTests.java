@@ -2,6 +2,8 @@ package com.apress.spring6recipes.bank.web;
 
 import com.apress.spring6recipes.bank.AccountService;
 import org.mockito.Mockito;
+import org.springframework.ui.ExtendedModelMap;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,18 +26,33 @@ public class DepositControllerTests {
 		depositController = new DepositController(accountService);
 	}
 
+	// @Test
+	// public void deposit() {
+	// 	// Setup
+	// 	Mockito.when(accountService.getBalance(TEST_ACCOUNT_NO)).thenReturn(150.0);
+	// 	ModelMap model = new ModelMap();
+
+	// 	// Execute
+	// 	String viewName = depositController.deposit(TEST_ACCOUNT_NO, TEST_AMOUNT, model);
+
+	// 	assertEquals(viewName, "success");
+	// 	assertEquals(model.get("accountNo"), TEST_ACCOUNT_NO);
+	// 	assertEquals(model.get("balance"), 150.0);
+	// }
+
 	@Test
-	public void deposit() {
+	void testDeposit() {
+
 		// Setup
 		Mockito.when(accountService.getBalance(TEST_ACCOUNT_NO)).thenReturn(150.0);
-		ModelMap model = new ModelMap();
+		Model model = new ExtendedModelMap();
 
-		// Execute
 		String viewName = depositController.deposit(TEST_ACCOUNT_NO, TEST_AMOUNT, model);
 
+
 		assertEquals(viewName, "success");
-		assertEquals(model.get("accountNo"), TEST_ACCOUNT_NO);
-		assertEquals(model.get("balance"), 150.0);
+		assertEquals(model.asMap().get("accountNo"), TEST_ACCOUNT_NO);
+		assertEquals(model.asMap().get("balance"), 150.0);
 	}
 
 }
