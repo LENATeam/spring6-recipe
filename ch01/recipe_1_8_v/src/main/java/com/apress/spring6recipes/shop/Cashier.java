@@ -9,6 +9,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 public class Cashier {
 
 	private final String fileName;
@@ -21,6 +24,7 @@ public class Cashier {
 		this.path = path;
 	}
 
+	@PostConstruct
 	public void openFile() throws IOException {
 		var options = new OpenOption[] {
 						StandardOpenOption.CREATE,
@@ -36,6 +40,7 @@ public class Cashier {
 		writer.flush();
 	}
 
+	@PreDestroy
 	public void closeFile() throws IOException {
 		writer.close();
 	}

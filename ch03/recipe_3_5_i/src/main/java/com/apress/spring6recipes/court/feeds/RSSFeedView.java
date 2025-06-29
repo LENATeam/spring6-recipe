@@ -17,7 +17,7 @@ public class RSSFeedView extends AbstractRssFeedView {
 
 	@Override
 	protected void buildFeedMetadata(Map<String, Object> model, Channel feed,
-																	 HttpServletRequest request) {
+										HttpServletRequest request) {
 		feed.setTitle("World Soccer Tournaments");
 		feed.setDescription("FIFA World Soccer Tournament Calendar");
 		feed.setLink("fifa.com");
@@ -32,8 +32,8 @@ public class RSSFeedView extends AbstractRssFeedView {
 
 	@Override
 	protected List<Item> buildFeedItems(Map<String, Object> model,
-																			HttpServletRequest request,
-																			HttpServletResponse response) {
+											HttpServletRequest request,
+											HttpServletResponse response) {
 		@SuppressWarnings({ "unchecked" })
 		var tournamentList = (List<TournamentContent>) model.get("feedContent");
 		return tournamentList.stream().map(this::toItem).collect(Collectors.toList());

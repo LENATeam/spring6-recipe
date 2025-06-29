@@ -19,7 +19,7 @@ public class AtomFeedView extends AbstractAtomFeedView {
 
 	@Override
 	protected void buildFeedMetadata(Map<String, Object> model, Feed feed,
-																	 HttpServletRequest request) {
+										HttpServletRequest request) {
 		feed.setId("tag:tennis.org");
 		feed.setTitle("Grand Slam Tournaments");
 
@@ -34,8 +34,8 @@ public class AtomFeedView extends AbstractAtomFeedView {
 
 	@Override
 	protected List<Entry> buildFeedEntries(Map<String, Object> model,
-																				 HttpServletRequest request,
-																				 HttpServletResponse response) {
+											HttpServletRequest request,
+											HttpServletResponse response) {
 		@SuppressWarnings({ "unchecked" })
 		var tournaments = (List<TournamentContent>) model.get("feedContent");
 		return tournaments.stream().map(this::toEntry).collect(Collectors.toList());

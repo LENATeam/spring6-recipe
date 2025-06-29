@@ -7,9 +7,11 @@ import com.apress.spring6recipes.shop.Product;
 import com.apress.spring6recipes.shop.ShoppingCart;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan("com.apress.spring6recipes.shop")
 public class ShopConfiguration {
 
 	@Bean
