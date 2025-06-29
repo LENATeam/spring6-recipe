@@ -36,10 +36,9 @@
 
     ```
     <dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.10.0</version>
-    <scope>test</scope>
+    <groupId>org.testng /groupId>
+    <artifactId>testng /artifactId>
+    <version>7.6.1 /version>
     </dependency>
     ```
 
