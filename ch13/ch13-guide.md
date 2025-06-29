@@ -10,9 +10,10 @@
 
         2. maven : mvn test
 
-2. 아래와 같이 설정을 확인 
+2. 아래와 같이 환경 별 설정을 확인 
 
-    > path : spring6-recipe\ch13\build.gradle
+    1. 제공되는 소스 path : spring6-recipe\ch13\build.gradle
+
 
     ```
     project('recipe_13_1_i') {
@@ -30,7 +31,17 @@
 
     ```
 
+    2. maven의 경우 path : pom.xml
 
+
+    ```
+    <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.10.0</version>
+    <scope>test</scope>
+    </dependency>
+    ```
 
 
 3. spring6-recipe 경로 (gradlew  또는 gradlew.bat을 있는 경로)로 이동
@@ -50,5 +61,19 @@
 
     BUILD SUCCESSFUL in 2s
     6 actionable tasks: 6 up-to-date
+    ```
+
+    또는 
+
+    ```
+     .\gradlew.bat :ch13:recipe_13_1_iii:test      
+
+    > Task :ch13:recipe_13_1_iii:test
+
+    Gradle suite > Gradle test > com.apress.spring6recipes.bank.SimpleInterestCalculatorTests > calculate PASSED
+
+    Gradle suite > Gradle test > com.apress.spring6recipes.bank.SimpleInterestCalculatorTests > illegalCalculate PASSED
+
+    BUILD SUCCESSFUL in 2s
     ```
 
