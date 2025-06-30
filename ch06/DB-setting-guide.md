@@ -325,10 +325,4 @@
                 truncate table vehicle restart identity; #sequence도 초기화
                 ```
 
-1. virtual box 설치 (Update예정)
 
-[https://www.virtualbox.org/](https://www.virtualbox.org/)
-
-![Untitled](3%20virtual%20box%20687770827cdd47f89812c9931a3ef3c5/Untitled.png)
-
-version : VirtualBox-7.0.12
