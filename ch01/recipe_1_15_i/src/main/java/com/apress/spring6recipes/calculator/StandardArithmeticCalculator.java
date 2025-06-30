@@ -2,7 +2,8 @@ package com.apress.spring6recipes.calculator;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
+@Component("arithmeticCalculator")
 class StandardArithmeticCalculator implements ArithmeticCalculator {
 
 	public double add(double a, double b) {
