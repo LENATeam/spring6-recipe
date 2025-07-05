@@ -1,4 +1,4 @@
-| 프로젝트        | 설명                                                                                                           | 비고                                                                     |
+| 예제        | 설명                                                                                                           | 비고                                                                     |
 | --------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | recipe_3_1_i    | MarshallingView로 XML 발행 예제                                                               | 실행방법<br>  ./gradlew ch03:recipe_3_1_i:build<br>./gradlew ch03:recipe_3_1_i:docker<br>./gradlew ch03:recipe_3_1_i:dockerRun<br>curl http://127.0.0.1:8080/court/members                        |
 | recipe_3_1_ii | 	@ResponseBody를 이용해 XML 발행 예제 | 실행방법<br>  ./gradlew ch03:recipe_3_1_ii:build<br>./gradlew ch03:recipe_3_1_ii:docker<br>./gradlew ch03:recipe_3_1_ii:dockerRun<br>curl http://127.0.0.1:8080/court/members |
