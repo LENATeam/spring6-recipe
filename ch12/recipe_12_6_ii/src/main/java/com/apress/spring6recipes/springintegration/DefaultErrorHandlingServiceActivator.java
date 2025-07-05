@@ -20,9 +20,11 @@ public class DefaultErrorHandlingServiceActivator {
 
 			if (failedMessage != null) {
 				// do something with the original message
+				// 원본 실패 메시지를 기반으로 처리
 			}
 		} else {
 			// it's something that was thrown in the execution of code in some component you created
+			// 사용자가 직접 만든 컴포넌트의 코드 실행 과정에서 발생한 예외임
 		}
 	}
 }
