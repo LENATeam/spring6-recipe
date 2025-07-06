@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.PreparedStatementSetter;
 
 public class JdbcVehicleDao implements VehicleDao {
 
@@ -29,6 +30,14 @@ public class JdbcVehicleDao implements VehicleDao {
 	@Override
 	public void insert(Vehicle vehicle) {
 		var jdbcTemplate = new JdbcTemplate(this.dataSource);
+		
+//		jdbcTemplate.update(INSERT_SQL, new PreparedStatementSetter() {
+//			public void setValues(PreparedStatement ps)
+//					throws SQLException {
+//				prepareStatement(ps, vehicle);
+//			}
+//		});
+		
 		jdbcTemplate.update(INSERT_SQL, ps -> prepareStatement(ps, vehicle));
 	}
 

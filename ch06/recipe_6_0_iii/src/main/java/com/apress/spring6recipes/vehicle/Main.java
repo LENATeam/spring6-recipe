@@ -1,7 +1,9 @@
 package com.apress.spring6recipes.vehicle;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.apress.spring6recipes.vehicle.config.VehicleConfiguration;
 
 /**
  * Created by marten on 24-03-14.
@@ -9,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		ApplicationContext context = new ClassPathXmlApplicationContext("vehicle-context.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(VehicleConfiguration.class);
 
 		VehicleDao vehicleDao = context.getBean("vehicleDao", VehicleDao.class);
 		Vehicle vehicle = new Vehicle("TEM0001", "Red", 4, 4);
