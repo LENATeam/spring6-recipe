@@ -23,7 +23,7 @@ Window > Preference 메뉴에 들어간 후 Java > Installed JREs 항목에서 S
 다음으로 Java > Compiler 항목에서 SDK를 JDK 19로 설정합니다.
 ![img](.//images/sts/sts-ide-java-settings-2.png)  
 
-### Gradle 설정
+### 프로젝트 열기
 
 예제 프로젝트의 최상위에 위치한 gradle.properties에 다음과 같이 java 위치(org.gradle.java.home)를 추가해줍니다.
 
@@ -40,6 +40,8 @@ org.gradle.warning.mode=all
 
 STS 기동 후 예제 프로젝트를 다음과 같이 import 합니다.  
 ![img](.//images/sts/sts-gradle-project-import.png)
+
+### Gradle Build
 
 Gradle Task 뷰에서 build > build 버튼을 더블클릭합니다.  
 ![img](.//images/sts/sts-gradle-build.png)
