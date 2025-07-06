@@ -41,7 +41,7 @@ org.gradle.warning.mode=all
 STS 기동 후 예제 프로젝트를 다음과 같이 import 합니다.  
 ![img](.//images/sts/sts-gradle-project-import.png)
 
-Gradle Task 뷰에서 build > build 버튼을 클릭합니다.  
+Gradle Task 뷰에서 build > build 버튼을 더블클릭합니다.  
 ![img](.//images/sts/sts-gradle-build.png)
 
 그러면 다음과 같이 빌드 수행이 성공하는 것을 확인할 수 있습니다.
