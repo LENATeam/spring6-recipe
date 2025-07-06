@@ -38,7 +38,7 @@ org.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8
 org.gradle.warning.mode=all
 ```
 
-STS 기동 후 예제 프로젝트를 다음과 깉이 import 합니다.  
+STS 기동 후 예제 프로젝트를 다음과 같이 import 합니다.  
 ![img](.//images/sts/sts-gradle-project-import.png)
 
 Gradle Task 뷰에서 build 버튼을 클릭합니다.  
