@@ -1,6 +1,24 @@
 # 6장
 
-1. WSL 이용해서 구성하기 (powershell 이용)
+1. local에 구성하기 
+
+    https://www.postgresql.org/download/windows/
+
+    1. 설치 os 확인
+
+    2. Download the installer 링크를 클릭 (postgresql-16.9-2-windows-x64.exe)
+
+    3. 다운로드한 .exe 파일을 관리자 권한으로 실행합니다.
+
+    4. 설치 마법사가 시작됩니다. Next를 누릅니다. 기본값(모두 선택)으로 두고 Next.  
+
+    5. postgres 계정의 비밀번호를 설정합니다. (pw: password)   
+
+    6. 포트 지정: 5432
+
+    7. 설치가 완료되면 StackBuilder 실행 여부 확인 , 체크 해제 후 Finish를 눌러 마칩니다.
+
+2. WSL 이용해서 구성하기 (powershell 이용)
 
     원하는 OS을 선택해서 설치 진행 (여기서는 OracleLinux_8_7 으로 진행)
    
@@ -224,106 +242,106 @@
        
             ![Untitled 5](https://github.com/LENATeam/spring6-recipe/assets/104717866/5a63d77b-6c33-4d0c-94c5-bcd1f9de2a97)
                   
-        6. 접속
-            1. bin\psql.sh 사용 
-                
-                ```bash
-                # bin\psql.sh
-                #!/bin/bash
-                
-                docker run -it --link ${1:-s6r-postgres}:postgres --rm postgres sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
-                
-                Password for user postgres:  #bin\postgres.sh에 설정된 POSTGRES_PASSWORD=password을 입력 : password
-                psql (16.1 (Debian 16.1-1.pgdg120+1))
-                Type "help" for help.
-                
-                postgres=#
-                #버전확인 
-                postgres=# select version();
-                                                                       version
-                ---------------------------------------------------------------------------------------------------------------------
-                 PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-                (1 row)
-                ```
-                
-                ![Untitled 6](https://github.com/LENATeam/spring6-recipe/assets/104717866/566bc634-a21d-4f0c-a46e-8447340efe2c)
-                                
-                아래 생성된 container을 통해 postgresql을 접속 함 
-                
-            2. Database 생성 및 조회 
-                
-                ```bash
-                postgres=# \l
-                                                                      List of databases
-                   Name    |  Owner   | Encoding | Locale Provider |  Collate   |   Ctype    | ICU Locale | ICU Rules |   Access privileges
-                -----------+----------+----------+-----------------+------------+------------+------------+-----------+-----------------------
-                 postgres  | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
-                 template0 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
-                           |          |          |                 |            |            |            |           | postgres=CTc/postgres
-                 template1 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
-                           |          |          |                 |            |            |            |           | postgres=CTc/postgres
-                 vehicle   | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
-                (4 rows)
-                
-                #기본 image에 Database vehicle이 생성되어 있음
-                #DROP DATABASE vehicle; 으로 삭제 후 생성
-                #CREATE DATABASE "vehicle"; 으로 생성 "" 으로 생성 
-                #CREATE DATABASE "course"; 으로 course 데이터베이스 생성
-                
-                ```
-                
-                ```bash
-                postgres=# SELECT * FROM pg_catalog.pg_tables;
-                #목록 확인 후 종료는 q
-                
-                #2곳 모두 생성이 필요함 database "vehicle"과 가장 기본생성되어 있는 postgres 둘다 실행 
-                postgres=# CREATE TABLE VEHICLE (
-                 VEHICLE_NO VARCHAR(10) NOT NULL,
-                 COLOR VARCHAR(10),
-                 WHEEL INT,
-                 SEAT INT,
-                 PRIMARY KEY (VEHICLE_NO)
-                );
-                CREATE TABLE
-                
-                #vehicle database으로 이동하여 table 생성
-                postgres=# \c vehicle
-                You are now connected to database "vehicle" as user "postgres".
-                
-                vehicle=# CREATE TABLE VEHICLE (
-                 VEHICLE_NO VARCHAR(10) NOT NULL,
-                 COLOR VARCHAR(10),
-                 WHEEL INT,
-                 SEAT INT,
-                 PRIMARY KEY (VEHICLE_NO)
-                );
-                CREATE TABLE
-                
-                vehicle=# SELECT * FROM pg_catalog.pg_tables;
-                
-                schemaname     |        tablename         | tableowner | tablespace | hasindexes | hasrules | hastriggers | rowsecurity
-                --------------------+--------------------------+------------+------------+------------+----------+-------------+-------------
-                 public             | vehicle                  | postgres   |            | t          | f        | f           | f
-                 pg_catalog         | pg_statistic             | postgres   |            | t          | f        | f           | f
-                 pg_catalog         | pg_type                  | postgres   |            | t          | f        | f           | f
-                
-                =# SELECT * From vehicle;
-                 vehicle_no | color | wheel | seat
-                ------------+-------+-------+------
-                (0 rows)
-                
-                #참고
-                postgres=#  SELECT * From vehicle;
-                ERROR:  relation "vehicle" does not exist
-                #결과없음
-                ```
-                
-            3. table 생성 및 조회 
-            4. table 전체 삭제 
-                
-                ```bash
-                truncate table vehicle ;
-                truncate table vehicle restart identity; #sequence도 초기화
-                ```
+3. 접속
+    1. bin\psql.sh 사용 
+        
+        ```bash
+        # bin\psql.sh
+        #!/bin/bash
+        
+        docker run -it --link ${1:-s6r-postgres}:postgres --rm postgres sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
+        
+        Password for user postgres:  #bin\postgres.sh에 설정된 POSTGRES_PASSWORD=password을 입력 : password
+        psql (16.1 (Debian 16.1-1.pgdg120+1))
+        Type "help" for help.
+        
+        postgres=#
+        #버전확인 
+        postgres=# select version();
+                                                                version
+        ---------------------------------------------------------------------------------------------------------------------
+            PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+        (1 row)
+        ```
+        
+        ![Untitled 6](https://github.com/LENATeam/spring6-recipe/assets/104717866/566bc634-a21d-4f0c-a46e-8447340efe2c)
+                        
+        아래 생성된 container을 통해 postgresql을 접속 함 
+        
+    2. Database 생성 및 조회 
+        
+        ```bash
+        postgres=# \l
+                                                                List of databases
+            Name    |  Owner   | Encoding | Locale Provider |  Collate   |   Ctype    | ICU Locale | ICU Rules |   Access privileges
+        -----------+----------+----------+-----------------+------------+------------+------------+-----------+-----------------------
+            postgres  | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
+            template0 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
+                    |          |          |                 |            |            |            |           | postgres=CTc/postgres
+            template1 | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           | =c/postgres          +
+                    |          |          |                 |            |            |            |           | postgres=CTc/postgres
+            vehicle   | postgres | UTF8     | libc            | en_US.utf8 | en_US.utf8 |            |           |
+        (4 rows)
+        
+        #기본 image에 Database vehicle이 생성되어 있음
+        #DROP DATABASE vehicle; 으로 삭제 후 생성
+        #CREATE DATABASE "vehicle"; 으로 생성 "" 으로 생성 
+        #CREATE DATABASE "course"; 으로 course 데이터베이스 생성
+        
+        ```
+        
+        ```bash
+        postgres=# SELECT * FROM pg_catalog.pg_tables;
+        #목록 확인 후 종료는 q
+        
+        #2곳 모두 생성이 필요함 database "vehicle"과 가장 기본생성되어 있는 postgres 둘다 실행 
+        postgres=# CREATE TABLE VEHICLE (
+            VEHICLE_NO VARCHAR(10) NOT NULL,
+            COLOR VARCHAR(10),
+            WHEEL INT,
+            SEAT INT,
+            PRIMARY KEY (VEHICLE_NO)
+        );
+        CREATE TABLE
+        
+        #vehicle database으로 이동하여 table 생성
+        postgres=# \c vehicle
+        You are now connected to database "vehicle" as user "postgres".
+        
+        vehicle=# CREATE TABLE VEHICLE (
+            VEHICLE_NO VARCHAR(10) NOT NULL,
+            COLOR VARCHAR(10),
+            WHEEL INT,
+            SEAT INT,
+            PRIMARY KEY (VEHICLE_NO)
+        );
+        CREATE TABLE
+        
+        vehicle=# SELECT * FROM pg_catalog.pg_tables;
+        
+        schemaname     |        tablename         | tableowner | tablespace | hasindexes | hasrules | hastriggers | rowsecurity
+        --------------------+--------------------------+------------+------------+------------+----------+-------------+-------------
+            public             | vehicle                  | postgres   |            | t          | f        | f           | f
+            pg_catalog         | pg_statistic             | postgres   |            | t          | f        | f           | f
+            pg_catalog         | pg_type                  | postgres   |            | t          | f        | f           | f
+        
+        =# SELECT * From vehicle;
+            vehicle_no | color | wheel | seat
+        ------------+-------+-------+------
+        (0 rows)
+        
+        #참고
+        postgres=#  SELECT * From vehicle;
+        ERROR:  relation "vehicle" does not exist
+        #결과없음
+        ```
+        
+    3. table 생성 및 조회 
+    4. table 전체 삭제 
+        
+        ```bash
+        truncate table vehicle ;
+        truncate table vehicle restart identity; #sequence도 초기화
+        ```
 
 
