@@ -268,6 +268,7 @@
                 #기본 image에 Database vehicle이 생성되어 있음
                 #DROP DATABASE vehicle; 으로 삭제 후 생성
                 #CREATE DATABASE "vehicle"; 으로 생성 "" 으로 생성 
+                #CREATE DATABASE "course"; 으로 course 데이터베이스 생성
                 
                 ```
                 

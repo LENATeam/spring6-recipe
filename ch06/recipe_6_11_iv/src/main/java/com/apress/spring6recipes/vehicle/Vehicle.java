@@ -1,15 +1,19 @@
 package com.apress.spring6recipes.vehicle;
 
 import java.util.Objects;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 
 public class Vehicle {
 
+	@Id
 	private String vehicleNo;
 	private String color;
 	private int wheel;
 	private int seat;
 
-	public Vehicle() {}
+	public Vehicle() {
+	}
 
 	public Vehicle(String vehicleNo, String color, int wheel, int seat) {
 		this.vehicleNo = vehicleNo;

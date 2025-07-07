@@ -21,7 +21,8 @@ public class HibernateCourseDao implements CourseDao {
 					.setProperty(AvailableSettings.PASS, "password")
 					.setProperty(AvailableSettings.SHOW_SQL, String.valueOf(true))
 					.setProperty(AvailableSettings.HBM2DDL_AUTO, "update")
-					.addClass(Course.class);
+					// .addClass(Course.class);
+					.addAnnotatedClass(Course.class);
 
 		this.sessionFactory = configuration.buildSessionFactory();
 	}
