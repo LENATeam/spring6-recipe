@@ -10,7 +10,7 @@ public class BackOfficeMain {
 		try (var context = new AnnotationConfigApplicationContext(cfg)) {
 			var backOffice = context.getBean(BackOffice.class);
 			var mail = backOffice.receiveMail();
-			System.out.printf("Recieved: %s%n", mail);
+			System.out.printf("Received: %s%n", mail);
 		}
 	}
 }
