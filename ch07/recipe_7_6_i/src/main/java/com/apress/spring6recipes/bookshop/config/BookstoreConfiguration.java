@@ -14,7 +14,7 @@ import com.apress.spring6recipes.bookshop.Cashier;
 import com.apress.spring6recipes.bookshop.JdbcBookShop;
 
 @Configuration
-@EnableTransactionManagement()
+@EnableTransactionManagement
 public class BookstoreConfiguration {
 
 	@Bean
