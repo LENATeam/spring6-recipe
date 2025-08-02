@@ -28,9 +28,9 @@ public class ShopConfiguration {
 	}
 
 	@Bean
-	public DiscountFactoryBean discountFactoryBeanAAA(Battery aaa) {
+	public DiscountFactoryBean discountFactoryBeanAAA() {
 		var factory = new DiscountFactoryBean();
-		factory.setProduct(aaa);
+		factory.setProduct(aaa());
 		factory.setDiscount(0.2);
 		return factory;
 	}
