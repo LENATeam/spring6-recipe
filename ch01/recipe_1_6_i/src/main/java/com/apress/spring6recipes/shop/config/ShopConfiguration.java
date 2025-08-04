@@ -17,7 +17,7 @@ import com.apress.spring6recipes.shop.Product;
 public class ShopConfiguration {
 
 	@Value("${endofyear.discount:0}")
-	private double specialEndofyearDiscountField;
+	private double specialEndOfYearDiscountField;
 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer pspc() {
@@ -26,6 +26,6 @@ public class ShopConfiguration {
 
 	@Bean
 	public Product dvdrw() {
-		return new Disc("DVD-RW", 1.5, 4700, specialEndofyearDiscountField);
+		return new Disc("DVD-RW", 1.5, 4700, specialEndOfYearDiscountField);
 	}
 }
