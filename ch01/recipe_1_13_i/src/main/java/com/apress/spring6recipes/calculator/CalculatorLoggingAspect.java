@@ -13,7 +13,7 @@ import java.util.Arrays;
 @Component
 public class CalculatorLoggingAspect {
 
-	private Logger log = LoggerFactory.getLogger(this.getClass());
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Before("execution(* *.*(..))")
 	public void logBefore(JoinPoint joinPoint) {

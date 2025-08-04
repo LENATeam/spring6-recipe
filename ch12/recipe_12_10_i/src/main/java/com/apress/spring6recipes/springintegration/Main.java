@@ -14,7 +14,7 @@ public class Main {
 
 		  var gateway = new GatewayProxyFactoryBean();
 			gateway.setDefaultRequestChannel(request);
-		  gateway.setDefaultReplyChannel(response);
+			gateway.setDefaultReplyChannel(response);
 			gateway.setBeanFactory(ctx);
 			gateway.afterPropertiesSet();;
 			gateway.start();

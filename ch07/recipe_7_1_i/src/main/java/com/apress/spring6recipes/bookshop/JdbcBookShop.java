@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 
 public class JdbcBookShop implements BookShop {
 
-		private final DataSource dataSource;
+	private final DataSource dataSource;
 
 	public JdbcBookShop(DataSource dataSource) {
 		this.dataSource = dataSource;

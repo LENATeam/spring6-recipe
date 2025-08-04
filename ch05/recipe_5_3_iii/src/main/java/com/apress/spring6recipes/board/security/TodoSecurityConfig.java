@@ -33,7 +33,7 @@ public class TodoSecurityConfig implements WebMvcConfigurer {
 		registry.addViewController("/logout-success").setViewName("logout-success");
 	}
 
-@Bean
+	@Bean
 	public UserDetailsManager userDetailsService(DataSource dataSource) {
 		var userDetailsManager = new JdbcUserDetailsManager(dataSource);
 		userDetailsManager.setUsersByUsernameQuery(USERS_BY_USERNAME);
