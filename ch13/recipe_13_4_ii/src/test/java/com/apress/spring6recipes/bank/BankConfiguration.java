@@ -5,7 +5,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
 public class BankConfiguration {
 
 	@Bean
@@ -13,4 +12,8 @@ public class BankConfiguration {
 		return new InMemoryAccountDao();
 	}
 
+    @Bean
+    public AccountService accountService(AccountDao accountDao) {
+        return new SimpleAccountService(accountDao);
+    }
 }

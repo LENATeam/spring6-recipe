@@ -156,6 +156,8 @@ project('recipe_13_3_i') {
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api'
+        testRuntimeOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
     }
 }
 
@@ -174,6 +176,8 @@ project('recipe_13_3_ii') {
         testImplementation group: 'org.testng', name: 'testng'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api'
+        testRuntimeOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
     }
 } 
 
@@ -210,6 +214,8 @@ project('recipe_13_4_ii') {
         testImplementation group: 'org.testng', name: 'testng'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api'
+        testRuntimeOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api'
     }
 } 
 
@@ -231,6 +237,9 @@ project('recipe_13_5_i') {
         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+        testRuntimeOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
     }
 
 } 
@@ -253,6 +262,9 @@ project('recipe_13_5_ii') {
         testImplementation group: 'org.testng', name: 'testng'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+        testRuntimeOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
     }
 } 
 
@@ -301,6 +313,8 @@ project('recipe_13_6_ii') {
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
         testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api'
+        testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+        testRuntimeOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
 
     }
 }
@@ -353,6 +367,8 @@ project('recipe_13_8_i') {
         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+        testRuntimeOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
     }
 
 }
@@ -378,5 +394,8 @@ project('recipe_13_8_ii') {
         testImplementation group: 'org.testng', name: 'testng'
         testImplementation group: 'org.mockito', name: 'mockito-core'
         testImplementation group: 'org.springframework', name: 'spring-test'
+        testImplementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+        testRuntimeOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
     }
 }

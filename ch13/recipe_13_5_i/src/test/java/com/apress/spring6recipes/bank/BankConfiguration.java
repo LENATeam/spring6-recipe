@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan
+
 public class BankConfiguration {
 
 	@Bean
@@ -40,4 +40,9 @@ public class BankConfiguration {
 	public JdbcAccountDao accountDao(JdbcTemplate jdbcTemplate) {
 		return new JdbcAccountDao(jdbcTemplate);
 	}
+
+    @Bean
+    public AccountService accountService(AccountDao accountDao) {
+        return new SimpleAccountService(accountDao);
+    }
 }

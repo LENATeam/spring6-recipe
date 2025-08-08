@@ -11,4 +11,8 @@ public class BankConfiguration {
 		return new InMemoryAccountDao();
 	}
 
+    @Bean
+    public AccountService accountService(AccountDao accountDao) {
+        return new SimpleAccountService(accountDao);
+    }
 }

@@ -48,7 +48,7 @@ public class DepositControllerContextTests extends AbstractTestNGSpringContextTe
 
 	@Test
 	public void deposit() throws Exception {
-		mockMvc.perform(post("/deposito")
+		mockMvc.perform(post("/deposit")
 										.param(ACCOUNT_PARAM, TEST_ACCOUNT_NO)
 										.param(AMOUNT_PARAM, TEST_AMOUNT))
 				.andExpect(forwardedUrl("/WEB-INF/views/success.jsp"))
